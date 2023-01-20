@@ -7,35 +7,35 @@ typedef struct LNode{
 	
 }Node,*LinkList;
 
-void creatlist(LinkList &head,int n);//´´½¨Á´±í
-void showlist(LinkList head);//Õ¹Ê¾Á´±í
-void my_get(int n2,LinkList head);//²éÁ´±íÖ¸¶¨Î»ÖÃÊı¾İ
-bool my_transform(LinkList &head,int n2,int data);//¸ÄÁ´±íÖ¸¶¨Êı¾İ
-bool my_delete(int n3,LinkList &head);//É¾³ıÁ´±íÖ¸¶¨Êı¾İ
-bool my_insert(LinkList &head,int n3,int n4);//Ö¸¶¨Á´±íÎ»ÖÃÌí¼ÓÊı¾İ
+void creatlist(LinkList &head,int n);//åˆ›å»ºé“¾è¡¨
+void showlist(LinkList head);//å±•ç¤ºé“¾è¡¨
+void my_get(int n2,LinkList head);//æŸ¥é“¾è¡¨æŒ‡å®šä½ç½®æ•°æ®
+bool my_transform(LinkList &head,int n2,int data);//æ”¹é“¾è¡¨æŒ‡å®šæ•°æ®
+bool my_delete(int n3,LinkList &head);//åˆ é™¤é“¾è¡¨æŒ‡å®šæ•°æ®
+bool my_insert(LinkList &head,int n3,int n4);//æŒ‡å®šé“¾è¡¨ä½ç½®æ·»åŠ æ•°æ®
 /////////////////////////////////////////////////////
 
 
 int main(void)
 {
 	int n;
-	cout<<"ÇëÊäÈë´´½¨Á´±í³¤¶È£º";
+	cout<<"è¯·è¾“å…¥åˆ›å»ºé“¾è¡¨é•¿åº¦ï¼š";
 	cin>>n;
 	LinkList head;
 	creatlist(head,n);
 	int m;
 	string s;
-	cout<<"ÇëÊäÈëĞèÒªµÄ²Ù×÷£¨Ôö£ºinsert£»É¾£ºdelete£»¸Ä£ºtransform£»²é£ºget£©£º";
+	cout<<"è¯·è¾“å…¥éœ€è¦çš„æ“ä½œï¼ˆå¢ï¼šinsertï¼›åˆ ï¼šdeleteï¼›æ”¹ï¼štransformï¼›æŸ¥ï¼šget;æ˜¾ç¤ºæ•´ä¸ªé“¾è¡¨æ•°æ®ï¼›é€€å‡ºï¼šexitï¼‰ï¼š";
 	while(cin>>s&&s!="exit"){
 		if(s=="get"){
 			int n2;
-			cout<<"ÇëÊäÈëĞèÒª²éÈ¡Êı¾İµÄÎ»ÖÃ£º";
+			cout<<"è¯·è¾“å…¥éœ€è¦æŸ¥å–æ•°æ®çš„ä½ç½®ï¼š";
 			cin>>n2;
 			my_get(n2,head);
 		}
 		else if(s=="delete"){
 			int n1;
-			cout<<"ÇëÊäÈëĞèÒªÉ¾³ıÊı¾İµÄÎ»ÖÃ£º";
+			cout<<"è¯·è¾“å…¥éœ€è¦åˆ é™¤æ•°æ®çš„ä½ç½®ï¼š";
 			cin>>n1;
 			if(my_delete(n1,head)){
 				cout<<"delete OK!"<<endl;
@@ -47,7 +47,7 @@ int main(void)
 		}
 		else if(s=="insert"){
 			int n3,n4;
-			cout<<"ÇëÊäÈëĞèÒªÔöÌíÊı¾İµÄÎ»ÖÃÒÔ¼°Êı¾İÖµ£º";
+			cout<<"è¯·è¾“å…¥éœ€è¦å¢æ·»æ•°æ®çš„ä½ç½®ä»¥åŠæ•°æ®å€¼ï¼š";
 			cin>>n3>>n4;
 			if(my_insert(head,n3,n4)){
 				cout<<"insert OK!"<<endl;
@@ -61,7 +61,7 @@ int main(void)
 		}
 		else if(s=="transform"){
 			int n5,n6;
-			cout<<"ÇëÊäÈëĞèÒª¸ü¸ÄµÄÊı¾İÎ»ÖÃÒÔ¼°¸ü¸ÄºóµÄÊı¾İÖµ£º";
+			cout<<"è¯·è¾“å…¥éœ€è¦æ›´æ”¹çš„æ•°æ®ä½ç½®ä»¥åŠæ›´æ”¹åçš„æ•°æ®å€¼ï¼š";
 			cin>>n5>>n6;
 			if(my_transform(head,n5,n6)){
 				cout<<"transform OK!"<<endl;
@@ -77,12 +77,12 @@ int main(void)
 
 ///////////////////////////////////////////////////////////
 
-//´´½¨Á´±í
+//åˆ›å»ºé“¾è¡¨
 void creatlist(LinkList &head,int n){
 	LinkList p2,tail;
 	int dt;
 	p2=(LinkList)malloc(sizeof(LNode));
-	cout<<"ÇëÊäÈëÊı¾İ£º";
+	cout<<"è¯·è¾“å…¥æ•°æ®ï¼š";
 	cin>>dt;
 	p2->data=dt;
 	p2->next=NULL;
@@ -90,7 +90,7 @@ void creatlist(LinkList &head,int n){
 	tail=head;
 	for(int i=1;i<n;i++){
 		p2=(LinkList)malloc(sizeof(LNode));
-		cout<<"ÇëÊäÈëÊı¾İ£º";
+		cout<<"è¯·è¾“å…¥æ•°æ®ï¼š";
 		cin>>dt;
 		p2->data=dt;
 		p2->next=NULL;
@@ -99,7 +99,7 @@ void creatlist(LinkList &head,int n){
 	}
 }
 
-//Õ¹Ê¾Á´±í
+//å±•ç¤ºé“¾è¡¨
 void showlist(LinkList head){
 	LinkList tail=head;
 	while(tail){
@@ -109,7 +109,7 @@ void showlist(LinkList head){
 	cout<<endl;
 }
 
-//²éÁ´±íÖ¸¶¨Î»ÖÃÊı¾İ
+//æŸ¥é“¾è¡¨æŒ‡å®šä½ç½®æ•°æ®
 void my_get(int n2,LinkList head){
 	LinkList p1=head;
 	for(int i=1;i<n2;i++){
@@ -119,11 +119,11 @@ void my_get(int n2,LinkList head){
 		}
 		p1=p1->next;
 	}
-	cout<<"²éµ½µÄÊı¾İÖµÎª£º"<<p1->data<<endl;
+	cout<<"æŸ¥åˆ°çš„æ•°æ®å€¼ä¸ºï¼š"<<p1->data<<endl;
 	
 }
 
-//¸ÄÁ´±íÖ¸¶¨Êı¾İ
+//æ”¹é“¾è¡¨æŒ‡å®šæ•°æ®
 bool my_transform(LinkList &head,int n2,int data){
 	LinkList p1=head;
 	for(int i=1;i<n2;i++){
@@ -137,7 +137,7 @@ bool my_transform(LinkList &head,int n2,int data){
 	
 }
 
-//É¾³ıÁ´±íÖ¸¶¨Êı¾İ
+//åˆ é™¤é“¾è¡¨æŒ‡å®šæ•°æ®
 bool my_delete(int n3,LinkList &head){
 	LinkList p1=head,p2=NULL;
 	if(n3==1){
@@ -159,7 +159,7 @@ bool my_delete(int n3,LinkList &head){
 	return 1;
 }
 
-//Ö¸¶¨Á´±íÎ»ÖÃÌí¼ÓÊı¾İ
+//æŒ‡å®šé“¾è¡¨ä½ç½®æ·»åŠ æ•°æ®
 bool my_insert(LinkList &head,int n3,int n4){
 	LinkList p1=head,p2;
 	p2=(LinkList)malloc(sizeof(Node));
